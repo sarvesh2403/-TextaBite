@@ -6,21 +6,28 @@
 
 ## 🔍 Features
 
-- Search food items by name (case-insensitive, partial match)
-- View essential nutrition info (calories, protein, fat, carbs, sugars, fiber)
-- Removes duplicate entries for clean results
-- Simple and lightweight – works from the command line
-- Easily extendable with fuzzy matching or UI
+- 🔤 Search food items by name (case-insensitive, partial match)
+- 🧠 Uses **fuzzy matching** to find the closest food name even if there are typos or partial inputs
+- 🔁 **Continuous input loop**: Keep searching for different foods until you type `exit` to quit
+- 📊 View essential nutrition info (calories, protein, fat, carbs, sugars, fiber)
+- 🧹 Removes duplicate entries for clean results
+- 🖥️ Simple and lightweight – works from the command line
+- 🚀 Easily extendable with a web UI or advanced matching techniques
 
 ---
 
 ## 📊 Sample Output
 
 ```
-Enter the food name: apple
+Enter the food name (or type 'exit' to quit): chickn
 
-Food_Item   Category  Calories (kcal)  Protein (g)  Carbohydrates (g)  Fat (g)  Fiber (g)  Sugars (g)
-Apple       Fruit     52               0.3          14.0               0.2      2.4        10.0
+✅ Closest match: 'Chicken' (Match Score: 91%)
+
+Food_Item  Category  Calories (kcal)  Protein (g)  Carbohydrates (g)  Fat (g)  Fiber (g)  Sugars (g)
+Chicken    Protein   239              27.3         0.0                13.6     0.0        0.0
+
+Enter the food name (or type 'exit' to quit): exit
+👋 Exiting the program. Stay healthy!
 ```
 
 ---
@@ -44,29 +51,36 @@ This project uses a CSV file (`daily_food_nutrition_dataset.csv`) containing nut
 ## 🛠️ How to Use
 
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/yourusername/TextaBite.git
 cd TextaBite
 ```
 
-### 2. Install dependencies (if any)
-Currently, no external dependencies are required for basic use.
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
 
 ### 3. Run the script
+
 ```bash
 python textabite.py
 ```
 
-> 🔁 It will prompt you to enter a food name, and return the matching nutritional info.
+> 🔁 You can enter multiple food names in sequence; type `exit` to quit.
 
 ---
 
 ## 🔧 Optional Enhancements
 
-Want to make it smarter? Add:
-- 🔤 **Fuzzy Matching** (for typo-tolerance)
+Want to make it smarter? Consider adding:
+
+- 🔤 **Improved fuzzy matching** or typo tolerance
 - 🌐 **Web UI** using Streamlit or Flask
-- 📦 **Package it** with argparse for CLI flags
+- 📦 **Packaging** with CLI flags using `argparse`
+- 🧪 **Unit tests** for robustness and maintainability
 
 ---
 
